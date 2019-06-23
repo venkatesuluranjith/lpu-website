@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+#autocolor{
+	width: 5em;
+	height: 2em;
+	padding: 0.75em 0.5em 0;
+	text-align: center;
+	border: 1px solid black;
+	margin: 3em auto 0;
+	font: bold 90% sans-serif;
+}
+</style>
+</head>
+<body>
+<div id="autocolor">
+Wow!
+</div>
+<script type="text/javascript">
+(function(){
+	var hexacode = ['#ffff00', '#ff0000', '#00ff00', '#0000ff', '#ffffff'],
+	el = document.getElementById('autocolor').style,
+	counter = -1,
+	hexalen = hexacode.length;
+	function auto(){
+		el.backgroundColor = hexacode[counter = ++counter % hexalen];
+	}
+	setInterval(auto, 800);
+})();
+</script>
+</body>
+</html>
